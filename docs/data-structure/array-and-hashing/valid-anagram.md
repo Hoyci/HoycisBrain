@@ -30,8 +30,8 @@ func isAnagram(s string, t string) bool {
 For this exercise, ChatGPT told me that `reflect.DeepEqual()` should be avoid whenever possible because: 
 
 1. This method doesn't contain static typing.
-
     Therefore there isn't type verification in compilation time. This can result in errors that are difficult to detect and can only be observed at run time.
+
     An example of this error:
     ```golang
     package main
@@ -56,6 +56,8 @@ For this exercise, ChatGPT told me that `reflect.DeepEqual()` should be avoid wh
 Another thing that ChatGPT told me was that using array to count letters should be better since the letters are ASCII characters. I confess that I didn't understand this at first. So I asked for ChatGPT to explain it better and that is what I understood.
 
 This approach means create an array of integers with a fixed size of 256 elements of ASCII table. Therefore, we can associate each ASCII character for each position in the array and count the number of occurence of this character.
+
+This is the final code:
 
 ```golang
 func isAnagram(s string, t string) bool {
